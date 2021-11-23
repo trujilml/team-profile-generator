@@ -8,3 +8,5 @@ const generateIntern
 generateHTML = (data) => {
     data
 }
+
+module.exports = generateHTML;
