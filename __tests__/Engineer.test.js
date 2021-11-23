@@ -17,7 +17,7 @@ test('creates engineer', () => {
 test('obtains github username with respective link', () => {
     const engineer = new Engineer('Josh', '75324', 'engineer@email.com', 'jwaltz');
 
-    expect(engineer.getGithub()).toEqual(expect.stringContaining('jwaltz'));
+    expect(engineer.getGitHub()).toEqual(expect.stringContaining('jwaltz'));
 });
 
 test('get engineer role', () => {
