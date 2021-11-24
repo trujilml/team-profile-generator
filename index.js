@@ -23,11 +23,57 @@ const addManager = () => {
                     return false;
                 }
             }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Please enter your work ID.',
+            validate: idInput => {
+                if (isNaN(idInput)) {
+                    console.log("Please enter your work ID!");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please enter your email.',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log("Please enter your work email!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'officeNumber',
+            message: 'Please enter the office number of the manager.',
+            validate: officeNumberInput => {
+                if (isNaN(officeNumberInput)) {
+                    console.log("Please reenter the correct office number.");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
         }
     ])
-}
+    .then(managerInput => {
+        const {name, id, email, officeNumber} = managerInput;
+        const manager = new Manager(name, id, email, officeNumber);
 
-        // enter manager id email and office number
+        workArray.push(manager);
+        console.log(manager);
+    })
+};
+
+        // enter email and office number
         // follow with addition of adding employee below
 
  const addEmployee = () => {
@@ -37,8 +83,8 @@ const addManager = () => {
 
  }
 
-    ])
-}
+//     ])
+// }
 
 //will become below to fit the following below it
 
