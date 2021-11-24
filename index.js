@@ -73,29 +73,117 @@ const addManager = () => {
     })
 };
 
-        // enter email and office number
-        // follow with addition of adding employee below
-
  const addEmployee = () => {
+     console.log(`
+     ==========================
+     Now time to add employees!
+     ==========================
+     `
+     );
      return inquirer.prompt ([
-
+         {
+             type: 'list',
+             name: 'role',
+             message: 'Choose the role of your employee!',
+             choices: ['Engineer', 'Intern']
+         },
+         {
+             type: 'input',
+             name: 'name',
+             message: 'Please enter the name of your employee.',
+             validate: nameInput => {
+                 if (nameInput) {
+                     return true;
+                 } else {
+                     console.log("Please enter the name of your employee!");
+                     return false;
+                 }
+             }
+         },
+         {
+             type: 'input',
+             name: 'id',
+             message: 'Enter the employee id.',
+             validate: idInput => {
+                if (isNaN(idInput)) {
+                    console.log("Please enter the employee's ID!");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please enter the email of the employee.',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log("Please enter your work email!");
+                    return false;
+                }
+            }
+        },
+        {
+            // for the engineer employee
+            type: 'input',
+            name: 'github',
+            message: 'Please enter the GitHub username of the employee.',
+            when: (input) => input.role === "Engineer",
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log("Please enter the GitHub username.")
+                }
+            }
+        },
+        {
+            // for the intern employee
+            type: 'input',
+            name: 'school',
+            message: 'Intern, please enter the name of your school.',
+            when: (input) => input.role === "Intern",
+            validate: schoolInput => {
+                if (schoolInput) {
+                    return true;
+                } else {
+                    console.log("Please enter the name of your school.")
+                }
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmEmployee',
+            message: 'Would you like to add more employees to your team profile?',
+            default: false
+        }
      ])
+     .then(employeeData => {
+         let {name, id, email, role, github, school, confirmEmployee} = employeeData;
+         let employee; 
 
- }
+         if (role === "Engineer") {
+             employee = new Engineer(name, id, email, github);
+             console.log(employee);
 
-//     ])
-// }
+         } else if(role === "Intern") {
+             employee = new Intern(name, id, email, school);
+             console.log(employee);
+         }
 
-//will become below to fit the following below it
+         workArray.push(employee);
 
 
-
-
-//choose whether to add intern or engineer 
-//name id email
-//engineer github 
-//intern school
-//give option to add more employees for display
+         if (employeeData.confirmEmployee) {
+             return addEmployee(workArray);
+         } else {
+             return workArray;
+         }
+     })
+ };
 
 const writeFile = (data) => {
     fs.writeFile('./dist/index.html', data, err => {
@@ -116,7 +204,4 @@ addManager()
     .then(profilePage => {
         return writeFile(profilePage);
     })
-    .catch(err => {console.log(err + "An error is visible in the code!")});
-
-// write file index html will be generated in src generate html js file 
-//original index html file has been deleted to allow generate html to generate html file for team profile
+    .catch(err => {console.log(err);});
