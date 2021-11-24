@@ -177,7 +177,7 @@ const addManager = () => {
          workArray.push(employee);
 
 
-         if (employeeData.confirmEmployee) {
+         if (confirmEmployee) {
              return addEmployee(workArray);
          } else {
              return workArray;
