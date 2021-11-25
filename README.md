@@ -7,7 +7,6 @@ Your challenge is to build a Node.js command-line application that takes in info
 Because this application won’t be deployed, you’ll also need to provide a link to a walkthrough video that demonstrates its functionality and all of the tests passing. You’ll need to submit a link to the video and add it to the README of your project.
 
 
-
 User Story
 AS A manager
 I WANT to generate a webpage that displays my team's basic info
@@ -42,23 +41,7 @@ Your application should use Jest (Links to an external site.) for running the un
 node index.js
 
 
-It is recommended that you start with a directory structure that looks like this:
-
-.
-├── __tests__/             //jest tests
-│   ├── Employee.test.js
-│   ├── Engineer.test.js
-│   ├── Intern.test.js
-│   └── Manager.test.js
-├── dist/                  // rendered output (HTML) and CSS style sheet      
-├── lib/                   // classes
-├── src/                   // template helper code 
-├── .gitignore             // indicates which folders and files Git should ignore
-├── index.js               // runs the application
-└── package.json         
-
 IMPORTANT
-Make sure that you remove dist from the .gitignore file so that Git will track this folder and include it when you push up to your application's repository.
 
 The application must have these classes: Employee, Manager, Engineer, and Intern. The tests for these classes (in the _tests_ directory) must all pass.
 
@@ -102,5 +85,4 @@ getSchool()
 
 getRole() // Overridden to return 'Intern'
 
-Finally, although it’s not a requirement, you should consider adding validation to ensure that user input provided is in the proper expected format.
 
