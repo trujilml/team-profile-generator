@@ -25,12 +25,11 @@ body {
 .title {
     background-color: var(--darkred);
     color: var(--white);
-    font-size: 60px;
+    font-size: 50px;
 }
 
 .card {
     background-color: var(--white);
-    border-radius: var(--border1);
 }
 
 .card-header {

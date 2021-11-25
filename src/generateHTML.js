@@ -1,16 +1,17 @@
 const generateManager = function(manager) {
     return `
     <div class="col-4 mt-4">
-    <div class="card">
-    <div class="card-header">
-    <h1>Manager ${manager.name}</h1>
-    </div>
-    <div class="card-body">
-    <p class="id">Manager ID: ${manager.id}</p>
-    <p class="email"> Manager Email: ${manager.email}</p>
-    <p class ="officeNumber">Manager Office Number: ${manager.officeNumber}</p>
-    </div>
-    </div>
+        <div class="card shadow h-100">
+            <div class="card-header">
+                <h1>${manager.name}</h1>
+                <h2>Manager</h2><i class="fas fa-user"></i>
+            </div>
+            <div class="card-body">
+                <p class="id">Manager ID: ${manager.id}</p>
+                <p class="email"> Manager Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                <p class ="officeNumber">Manager Office Number: ${manager.officeNumber}</p>
+            </div>
+        </div>
     </div>
     `;
 }
@@ -18,16 +19,17 @@ const generateManager = function(manager) {
 const generateEngineer = function(engineer) {
     return `
     <div class="col-4 mt-4">
-    <div class="card">
-    <div class="card-header">
-    <h1>Engineer ${engineer.name}</h1>
-    </div>
-    <div class="card-body">
-    <p class="id">Engineer ID: ${engineer.id}</p>
-    <p class="email">Engineer Email: ${engineer.email}</p>
-    <p class="github">Engineer GitHub: ${engineer.github}</p>
-    </div>
-    </div>
+        <div class="card shadow h-100">
+            <div class="card-header">
+                <h1>${engineer.name}</h1>
+                <h2>Engineer</h2><i class="fas fa-network-wired"></i>
+            </div>
+            <div class="card-body">
+                <p class="id">Engineer ID: ${engineer.id}</p>
+                <p class="email">Engineer Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                <p class="github">Engineer GitHub: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+            </div>
+        </div>
     </div>
     `;
 }
@@ -35,16 +37,17 @@ const generateEngineer = function(engineer) {
 const generateIntern = function(intern) {
     return `
     <div class="col-4 mt-4">
-    <div class="card">
-    <div class="card-header">
-    <h1>Intern ${intern.name}</h1>
-    </div>
-    <div class="card-body">
-    <p class="id">Intern ID: ${intern.id}</p>
-    <p class="email">Intern Email: ${intern.email}</p>
-    <p class="school">Intern School: ${intern.school}</p>
-    </div>
-    </div>
+        <div class="card shadow h-100">
+            <div class="card-header">
+                <h1>${intern.name}</h1>
+                <h2>Intern</h2><i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="card-body">
+                <p class="id">Intern ID: ${intern.id}</p>
+                <p class="email">Intern Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+                <p class="school">Intern School: ${intern.school}</p>
+            </div>
+        </div>
     </div>
     `;
 }
@@ -99,7 +102,7 @@ const generateTeamProfilePage = function(employeeTeam) {
     </head>
     <body>
         <header>
-        <h1 class="title text-center">Team Profile Page</h1>
+        <h1 class="mb-0 w-100 title text-center"><i class="fas fa-users"></i>Team Profile Page</h1>
         </header>
 
         <main>
