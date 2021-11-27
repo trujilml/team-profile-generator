@@ -1,45 +1,38 @@
-# team-profile-generator
-<!-- refer to professional readme generator to organize this readme file once project is completed -->
+# Team Profile Generator
 
-Your Task
-Your challenge is to build a Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person. Because testing is key to making code maintainable, you’ll also write unit tests for each part of your code and ensure that it passes all of them.
+![TeamProfileGeneratorResult](./samples/teamprofilegeneratorresult.png)
 
-Because this application won’t be deployed, you’ll also need to provide a link to a walkthrough video that demonstrates its functionality and all of the tests passing. You’ll need to submit a link to the video and add it to the README of your project.
+## Description 
+This application takes in information of your employees on a software engineering team and generates an HTML webpage which presents summaries of each employee based on the information submitted.
 
+By entering `node index.js` on the command-line application, you will begin entering information on your employees using your command-line terminal. You will be first prompted to enter information on your manager (their name, employee ID, email address and office number) before having the ability to add your employees (with either the engineer or intern criteria). Adding the engineer or intern employee will ask for its own respective information (engineer will require GitHub username and the intern will require their school name) following the submission of their name, employee ID, and email address. When the team building is completed, the user will have an generated HTML webpage to see their team page. The generated email is clickable and allows the user to email to that email address alongside the GitHub username from the engineer employee, which will take the user to the GitHub profile of that username.
 
-User Story
-AS A manager
-I WANT to generate a webpage that displays my team's basic info
-SO THAT I have quick access to their emails and GitHub profiles
+## Table of Contents
+  - [Description](#Description)
+  - [Installation](#Installation)
+  - [Usage](#Usage)
+  - [Tests](#Tests)
+  - [Developed With](#Developed-with)
 
-Acceptance Criteria
-GIVEN a command-line application that accepts user input
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated
+## Installation
+- This file can be cloned through GitHub using the above Code button.
+- Node.js, npm, Inquirer, and Jest installation are required prior to running tests and starting the command-line application. 
 
-HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.
+## Usage 
+- Open the terminal through either the Integrated Terminal on VS Code or through the Terminal application on Mac OS once the cloned file has been loaded and respective installers are present (Node.js, Inquirer, Jest).
+- Prior to starting, `npm run test` to prove all test content file from lib in __tests__ pass. This uses the Jest application.
+- Type `node index.js` to get started.
+- Enter input into the prompts (run on Inquirer package).
+- A responsive, designed HTML webpage will be generated when completed entering the prompts of your work team. Please refer to the index.html file in the samples folder for review.
 
-Getting Started
+## Tests 
+- Prior to starting the application, enter `npm run test` in your terminal to run Jest on the tests to ensure all test objects run properly. 
 
-Your application should use Jest (Links to an external site.) for running the unit tests and Inquirer (Links to an external site.) for collecting input from the user. The application will be invoked by using the following command:
+## Developed With 
+- JavaScript 
+- Node.js
+- Inquirer - demonstration of prompts ran for user to enter information of their work team
+- Jest - demonstrated use of object-oriented programming and test-driven development when it came to running tests on the respective classes (Employee, Engineer, Intern, Manager)
+- HTML
+- CSS
 
-node index.js
-
-
-
-
-The application must have these classes: Employee, Manager, Engineer, and Intern. The tests for these classes (in the _tests_ directory) all pass.
